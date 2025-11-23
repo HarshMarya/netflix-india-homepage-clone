@@ -1,30 +1,26 @@
-import { useState } from 'react'
-import Login from './Components/Login'
-import SignIn from './Components/SignIn'
-import Section2 from './Components/Section2'
-import Section3 from './Components/Section3'
-import Section4 from './Components/Section4'
-import Section5 from './Components/Section5'
-import {FaqContainer,FaqBox} from './Components/FaqContainer'
-import Footer from './Components/Footer'
-import Header from './Components/Header'
-import TopSection from './Components/TopSection'
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'
+import NetflixHomepage from './Components/NetflixHomepage'
+import MovieDetails from './Components/MovieDetails'
+import SearchPage from './Components/SearchPage'
+import FavoritesPage from './Components/FavoritesPage'
+import MoviePlayer from './Components/MoviePlayer'
+import { MovieProvider } from './context/MovieContext'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      {/* <Login/> */}
-      {/* <SignIn/> */}
-      <TopSection/>
-      <Section2/>
-      <Section3/>
-      <Section4/>
-      <Section5/>
-      <FaqContainer/>
-      <Footer/>
-    </>
+    <BrowserRouter>
+      <MovieProvider>
+        <Routes>
+          <Route path="/" element={<Navigate to="/browse" replace />} />
+          <Route path="/browse" element={<NetflixHomepage />} />
+          <Route path="/movie/:imdbID" element={<MovieDetails />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
+          <Route path="/player/:imdbID" element={<MoviePlayer />} />
+          <Route path="*" element={<Navigate to="/browse" replace />} />
+        </Routes>
+      </MovieProvider>
+    </BrowserRouter>
   )
 }
 

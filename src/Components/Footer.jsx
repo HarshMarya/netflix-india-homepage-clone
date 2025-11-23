@@ -1,56 +1,87 @@
 import React from 'react'
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { LuLanguages } from "react-icons/lu";
 
-
 function Footer() {
+    const currentYear = new Date().getFullYear();
+
     return (
-        <footer className='bg-black text-white py-10 pl-10 lg:pl-[15%] lg:pr-[10%]'>
-            <div className=''>
-                <p>Questions? Call <a href='tel:000-800-919-1694' className=' cursor-pointer hover:underline'>000-800-919-1694</a></p>
-            </div>
-            <div className='flex lg:flex-row flex-col lg:justify-between gap-4 py-6'>
-                <div className='flex justify-between md:justify-evenly lg:gap-20 px-10'>
-                    <ul className='text-[#ffffffb3]'>
-                        <li className=' cursor-pointer underline py-1'><a>FAQ</a></li>
-                        <li className=' cursor-pointer underline py-1'><a>Investor Relations</a> </li>
-                        <li className=' cursor-pointer underline py-1'><a>Privacy</a></li>
-                        <li className=' cursor-pointer underline py-1'><a>Speed Test</a></li>
-                    </ul>
-                    <ul className='text-[#ffffffb3]'>
-                        <li className=' cursor-pointer underline py-1'><a>Help Centre</a> </li>
-                        <li className=' cursor-pointer underline py-1'><a>Jobs</a></li>
-                        <li className=' cursor-pointer underline py-1'><a>Cookie Preferences</a> </li>
-                        <li className=' cursor-pointer underline py-1'><a>Legal Notices</a> </li>
-                    </ul>
-                </div>
-                <div className='flex justify-between px-6 md:justify-evenly items-start lg:gap-20'>
-                    <ul className='ml-3 text-[#ffffffb3]'>
-                        <li className=' cursor-pointer underline py-1'><a>Account</a></li>
-                        <li className=' cursor-pointer underline py-1'><a>Ways to Watch</a></li>
-                        <li className=' cursor-pointer underline py-1'><a>
-                            Corporate Information</a> </li>
-                        <li className=' cursor-pointer underline py-1'><a>Only on Netflix</a> </li>
-                    </ul>
-                    <ul className='mr-14 text-[#ffffffb3]'>
-                        <li className=' cursor-pointer underline py-1'><a>Media Centre</a></li>
-                        <li className=' cursor-pointer underline py-1'><a>Terms of Use</a></li>
-                        <li className=' cursor-pointer underline py-1'><a>Contact Us</a> </li>
-                    </ul>
-                </div>
-            </div>
-            <div className=''>
-                <div class="flex ">
-                    <div className='flex justify-center items-center border-[#ffffffb3] border-[1px] my-4 py-1 px-4 lg:py-2 rounded-md '>
-                        <LuLanguages className='hidden md:block' />
-                        <select className='text-white bg-transparent outline-none' name="language" id="lang">
-                            <option value="English">English</option>
-                            <option value="hindi">हिंदी</option>
-                        </select>
-                    </div>
-                </div>
-                <span className='text-[#ffffffb3]'>Netflix India</span>
+        <footer className='bg-black text-white py-12 px-4 md:px-12 lg:px-[15%]'>
+            {/* Contact Section */}
+            <div className='mb-8'>
+                <p className='text-gray-400'>Questions? Call <a href='tel:000-800-919-1694' className='text-white cursor-pointer hover:underline'>000-800-919-1694</a></p>
             </div>
 
+            {/* Social Links */}
+            <div className='flex items-center gap-6 mb-8'>
+                <a href="#" className='text-gray-400 hover:text-white transition-colors' aria-label="Facebook">
+                    <FaFacebook size={20} />
+                </a>
+                <a href="#" className='text-gray-400 hover:text-white transition-colors' aria-label="Instagram">
+                    <FaInstagram size={20} />
+                </a>
+                <a href="#" className='text-gray-400 hover:text-white transition-colors' aria-label="Twitter">
+                    <FaTwitter size={20} />
+                </a>
+                <a href="#" className='text-gray-400 hover:text-white transition-colors' aria-label="YouTube">
+                    <FaYoutube size={20} />
+                </a>
+            </div>
+
+            {/* Links Grid */}
+            <div className='grid grid-cols-2 md:grid-cols-4 gap-8 mb-8'>
+                <div>
+                    <ul className='text-gray-400 text-sm space-y-2'>
+                        <li className='cursor-pointer hover:text-white transition-colors underline'><a href="#">FAQ</a></li>
+                        <li className='cursor-pointer hover:text-white transition-colors underline'><a href="#">Help Centre</a></li>
+                        <li className='cursor-pointer hover:text-white transition-colors underline'><a href="#">Account</a></li>
+                        <li className='cursor-pointer hover:text-white transition-colors underline'><a href="#">Media Centre</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul className='text-gray-400 text-sm space-y-2'>
+                        <li className='cursor-pointer hover:text-white transition-colors underline'><a href="#">Investor Relations</a></li>
+                        <li className='cursor-pointer hover:text-white transition-colors underline'><a href="#">Jobs</a></li>
+                        <li className='cursor-pointer hover:text-white transition-colors underline'><a href="#">Ways to Watch</a></li>
+                        <li className='cursor-pointer hover:text-white transition-colors underline'><a href="#">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul className='text-gray-400 text-sm space-y-2'>
+                        <li className='cursor-pointer hover:text-white transition-colors underline'><a href="#">Privacy</a></li>
+                        <li className='cursor-pointer hover:text-white transition-colors underline'><a href="#">Cookie Preferences</a></li>
+                        <li className='cursor-pointer hover:text-white transition-colors underline'><a href="#">Corporate Information</a></li>
+                        <li className='cursor-pointer hover:text-white transition-colors underline'><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul className='text-gray-400 text-sm space-y-2'>
+                        <li className='cursor-pointer hover:text-white transition-colors underline'><a href="#">Speed Test</a></li>
+                        <li className='cursor-pointer hover:text-white transition-colors underline'><a href="#">Legal Notices</a></li>
+                        <li className='cursor-pointer hover:text-white transition-colors underline'><a href="#">Only on Netflix</a></li>
+                        <li className='cursor-pointer hover:text-white transition-colors underline'><a href="#">Audio Description</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            {/* Language Selector */}
+            <div className='mb-8'>
+                <div className='flex items-center border border-gray-600 rounded-md py-2 px-4 w-fit hover:border-gray-400 transition-colors'>
+                    <LuLanguages className='mr-2 text-gray-400' size={18} />
+                    <select className='text-white bg-transparent outline-none cursor-pointer' name="language" id="lang">
+                        <option value="English">English</option>
+                        <option value="hindi">हिंदी</option>
+                        <option value="spanish">Español</option>
+                        <option value="french">Français</option>
+                    </select>
+                </div>
+            </div>
+
+            {/* Bottom Section */}
+            <div className='border-t border-gray-700 pt-6'>
+                <p className='text-gray-500 text-xs mb-2'>Netflix India</p>
+                <p className='text-gray-500 text-xs'>© {currentYear} Netflix Clone. This is a fan-made project for educational purposes. Netflix is a registered trademark of Netflix, Inc.</p>
+            </div>
         </footer>
     )
 }
